@@ -1,0 +1,61 @@
+var fs = require('fs')
+var path = require('path')
+
+var ace = require('brace')
+require('brace/mode/sqlserver')
+require('brace/keybinding/emacs')
+require('brace/keybinding/vim')
+require('brace/theme/ambiance')
+require('brace/theme/chaos')
+require('brace/theme/chrome')
+require('brace/theme/clouds')
+require('brace/theme/clouds_midnight')
+require('brace/theme/cobalt')
+require('brace/theme/crimson_editor')
+require('brace/theme/dawn')
+require('brace/theme/dreamweaver')
+require('brace/theme/eclipse')
+require('brace/theme/github')
+require('brace/theme/idle_fingers')
+require('brace/theme/iplastic')
+require('brace/theme/katzenmilch')
+require('brace/theme/kr_theme')
+require('brace/theme/kuroir')
+require('brace/theme/merbivore')
+require('brace/theme/merbivore_soft')
+require('brace/theme/monokai')
+require('brace/theme/mono_industrial')
+require('brace/theme/pastel_on_dark')
+require('brace/theme/solarized_dark')
+require('brace/theme/solarized_light')
+require('brace/theme/sqlserver')
+require('brace/theme/terminal')
+require('brace/theme/textmate')
+require('brace/theme/tomorrow')
+require('brace/theme/tomorrow_night')
+require('brace/theme/tomorrow_night_blue')
+require('brace/theme/tomorrow_night_bright')
+require('brace/theme/tomorrow_night_eighties')
+require('brace/theme/twilight')
+require('brace/theme/vibrant_ink')
+require('brace/theme/xcode')
+
+var someSql = fs.readFileSync(path.resolve(path.join(__dirname, '../example.sql')), 'utf8')
+
+var editor = ace.edit(document.getElementById('editor'))
+editor.getSession().setMode('ace/mode/sqlserver')
+editor.setTheme('ace/theme/monokai')
+editor.setKeyboardHandler(null)
+editor.setValue(someSql)
+
+document.getElementById('theme-select').addEventListener('change', function (event) {
+  var select = event.target
+  var theme = select.options[select.selectedIndex].textContent
+  editor.setTheme('ace/theme/' + theme)
+})
+
+document.getElementById('key-binding-select').addEventListener('change', function (event) {
+  var select = event.target
+  var keyBinding = select.options[select.selectedIndex].textContent
+  editor.setKeyboardHandler(keyBinding !== 'ace' ? 'ace/keyboard/' + keyBinding : null)
+})

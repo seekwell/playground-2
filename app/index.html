@@ -4,8 +4,93 @@
     <meta charset="utf-8">
     <title>Hello World!</title>
     <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="node_modules/brace/theme/ambiance.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/chaos.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/chrome.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/clouds.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/clouds_midnight.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/cobalt.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/crimson_editor.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/dawn.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/dreamweaver.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/eclipse.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/github.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/idle_fingers.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/iplastic.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/katzenmilch.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/kr_theme.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/kuroir.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/merbivore.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/merbivore_soft.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/monokai.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/mono_industrial.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/pastel_on_dark.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/solarized_dark.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/solarized_light.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/sqlserver.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/terminal.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/textmate.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/tomorrow.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/tomorrow_night.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/tomorrow_night_blue.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/tomorrow_night_bright.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/tomorrow_night_eighties.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/twilight.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/vibrant_ink.js">
+    <link rel="stylesheet" href="node_modules/brace/theme/xcode.js">
   </head>
   <body>
+    <div style="margin-bottom: 10px;">
+      <label for="theme-select">Select a theme:</label>
+      <select id="theme-select" style="margin-right: 50px;">
+        <option>ambiance</option>
+        <option>chaos</option>
+        <option>chrome</option>
+        <option>clouds</option>
+        <option>clouds_midnight</option>
+        <option>cobalt</option>
+        <option>crimson_editor</option>
+        <option>dawn</option>
+        <option>dreamweaver</option>
+        <option>eclipse</option>
+        <option>github</option>
+        <option>idle_fingers</option>
+        <option>iplastic</option>
+        <option>katzenmilch</option>
+        <option>kr_theme</option>
+        <option>kuroir</option>
+        <option>merbivore</option>
+        <option>merbivore_soft</option>
+        <option selected>monokai</option>
+        <option>mono_industrial</option>
+        <option>pastel_on_dark</option>
+        <option>solarized_dark</option>
+        <option>solarized_light</option>
+        <option>sqlserver</option>
+        <option>terminal</option>
+        <option>textmate</option>
+        <option>tomorrow</option>
+        <option>tomorrow_night</option>
+        <option>tomorrow_night_blue</option>
+        <option>tomorrow_night_bright</option>
+        <option>tomorrow_night_eighties</option>
+        <option>twilight</option>
+        <option>vibrant_ink</option>
+        <option>xcode</option>
+      </select>
+      <label for="key-binding-select">Select a key binding</label>
+      <select id="key-binding-select">
+        <option selected>ace</option>
+        <option>emacs</option>
+        <option>vim</option>
+      </select>
+    </div>
+    <style>
+      .ace_editor {
+        min-height: 500px;
+      }
+    </style>
+    <div id="editor"></div>
     <div class="container">
       <header>
         <h1>Hello World!</h1>
@@ -39,5 +124,6 @@
     // You can also require other files to run in this process
     require('./assets/js/ex-links.js')
     require('./assets/js/notifications.js')
+    require('./assets/js/code-editor.js')
   </script>
 </html>
